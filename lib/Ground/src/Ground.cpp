@@ -21,9 +21,9 @@ void Ground::begin(bool pull_up = false) {
 }
 
 float Ground::getHumidity() {
-    // read -> 100%
-    // 1023 -> x%
+    // 0    -> 100%
+    // 1023 -> 0%
 
-    double reading = (double) analogRead(sensor_pin);
-    return 100.0f - (float)(reading * 100.0 / 1023.0);
+    long reading = (long) analogRead(sensor_pin);
+    return map(reading, 0, 1023, 100, 0);
 }
