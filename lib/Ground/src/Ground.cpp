@@ -1,4 +1,3 @@
-#include <Arduino.h>
 #include <Ground.hpp>
 
 Ground::Ground(uint8_t pin) {
@@ -6,7 +5,7 @@ Ground::Ground(uint8_t pin) {
     began = false;
 }
 
-void Ground::begin(bool pull_up = false) {
+void Ground::begin(bool pull_up) {
     began = true;
 
     if(began) {
